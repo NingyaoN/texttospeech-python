@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd /home/ningshen/workspace
+cd /home/wungthing/project
 code .
