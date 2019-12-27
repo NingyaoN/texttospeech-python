@@ -6,7 +6,7 @@ from playsound import playsound
 import os
 import random
 from gtts import gTTS
-
+import subprocess
 
 r = sr.Recognizer()
 
@@ -37,6 +37,8 @@ def texttospeech_speak(audio_string):
     playsound(audio_file)
     #print(audio_string)
     os.remove(audio_file)
+def open_folder():
+    webbrowser.open("//home/ningshen//workspace")
 
 def respond(voice_data):
     if 'what is your name' in voice_data:
@@ -57,6 +59,13 @@ def respond(voice_data):
         webbrowser.get().open(url)
         #print('Here is the location of  ' + location)
         texttospeech_speak('Here is the location that you ask for.')
+    if 'open  workspace one' in voice_data:
+        texttospeech_speak('opening workspace one')
+        open_folder();
+    if 'open current project' in voice_data:
+        subprocess.call(["./test.sh"])
+        texttospeech_speak("Directory changed, Opening project")
+        
     if 'exit' in voice_data:
         texttospeech_speak('Stopping application')
         exit()
