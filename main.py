@@ -38,7 +38,7 @@ def texttospeech_speak(audio_string):
     #print(audio_string)
     os.remove(audio_file)
 def open_folder():
-    webbrowser.open("//home/ningshen//workspace")
+    webbrowser.open("//home//wungthing//project")
 
 def respond(voice_data):
     if 'what is your name' in voice_data:
